@@ -17,7 +17,6 @@ function setColor() {
 
     console.log(time);
    
-// 
     if (currentTime > time) {
       $(this).addClass("future");
     } else if (currentTime === time) {
@@ -31,13 +30,14 @@ function setColor() {
 let saveBtn = $(".saveBtn");
 
 saveBtn.on("click", function () {
-
+  // used the siblings selector to get the time and user input from each timeblock
   let hour = $(this).siblings(".hour").text();
   let schedItem = $(this).siblings(".description").val();
 
   localStorage.setItem(hour, schedItem);
-
+console.log(hour);
 });
+
 
 // save and then grab inputs from local storage 
 function saveSchedule() {
